@@ -32,7 +32,10 @@ public:
     
     float getIntensityAtFrequency(float _freq);
     vector<float> getSpectrum();
-    
+
+    const vector<float>& getGraphLow() const { return graphLow; }
+    const vector<float>& getGraphMid() const { return graphMid; }
+    const vector<float>& getGraphHigh() const { return graphHigh; }
     
     int getNumFFTbins();
     float getFFTpercentage();
@@ -44,6 +47,7 @@ public:
     void setHistorySize(int _framesOfHistory);
     void setVolumeRange(int _volumeRange);
     void setNormalize(bool _normalize);
+    void setSaveHistory(bool _saveHistory) { saveHistory = _saveHistory; }
     
     void drawBars();
     void drawDebug();
